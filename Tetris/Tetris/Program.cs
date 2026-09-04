@@ -1,7 +1,9 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Tetris
@@ -14,16 +16,19 @@ namespace Tetris
             Console.SetWindowSize(40,30);
             Console.SetBufferSize(40,30);
 
-            Figure[] figures = new Figure[2];
-            figures[0] = new Stick(1,1,'*');
-            figures[1] = new Square(5, 5, '#');
-            foreach (Figure f in figures)
-            {
-                f.Draw();
-            }
+            Test();
+
             Console.ReadLine();
         }
 
-       
+        static void Test()
+        {
+            Square square = new Square(2, 5, '*');
+            square.Draw();
+            Thread.Sleep(500);
+            square.Hide();
+            square.Move(Direction.LEFT);
+            square.Draw();
+        }
     }
 }
