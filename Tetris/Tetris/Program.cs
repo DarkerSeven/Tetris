@@ -13,11 +13,14 @@ namespace Tetris
            
             Console.SetWindowSize(40,30);
             Console.SetBufferSize(40,30);
-            
-            Point point = new Point(20, 15, '*');
 
-            point.Draw();
-            
+            Figure[] figures = new Figure[2];
+            figures[0] = new Stick(1,1,'*');
+            figures[1] = new Square(5, 5, '#');
+            foreach (Figure f in figures)
+            {
+                f.Draw();
+            }
             Console.ReadLine();
         }
 
