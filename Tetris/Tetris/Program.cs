@@ -16,8 +16,6 @@ namespace Tetris
             
             Point point = new Point(20, 15, '*');
 
-            
-
             point.Draw();
             
             Console.ReadLine();
