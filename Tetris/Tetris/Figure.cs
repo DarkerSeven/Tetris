@@ -31,10 +31,12 @@ namespace Tetris
 
         public void Move(Direction dir)
         {
+            Hide();
             foreach (Point p in points)
             {
                 p.Move(dir);
             }
+            Draw();
         }
 
         public abstract void Rotate(Direction dir);
